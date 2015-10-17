@@ -22,8 +22,9 @@ if __name__ == "__main__":
     maxFileSize = 2 # This can't be bigger than specified cache size (X) : 36700160 bytes = 25 MiB
     maxDuration = 3600 # 3600s = 1h
     nrOfClients = 100
-    requestRate = 10
+    requestRate = 0.005
     outPutFile = "input.txt"
+    tempFile = "temp.txt"
 
     # Zipf distribution for popularity of the files (most files will be requested only a few times)
     # Prepare a constant according to: https://sv.wikipedia.org/wiki/Zipfs_lag
@@ -59,5 +60,9 @@ if __name__ == "__main__":
 
     os.system("cat /dev/null > " + outPutFile) # Clear file
 
-    writeFile = open(outPutFile,"a")
+    # Write to temp file
+    writeFile = open(tempFile,"a")
     writeFile.write(writeString)
+    # Sort the file on incomming times
+    os.system("sort -k1 -n " + tempFile + " > " + outPutFile)
+    os.system("rm " + tempFile)
