@@ -1,0 +1,1315 @@
+No.     Time           Source                Destination           Protocol Length Info
+    103 6.764598000    130.236.205.235       128.119.245.12        HTTP     407    GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1 
+
+Frame 103: 407 bytes on wire (3256 bits), 407 bytes captured (3256 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:44.042504000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267544.042504000 seconds
+    [Time delta from previous captured frame: 0.000205000 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 6.764598000 seconds]
+    Frame Number: 103
+    Frame Length: 407 bytes (3256 bits)
+    Capture Length: 407 bytes (3256 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Apple_3f:ef:90 (b8:e8:56:3f:ef:90), Dst: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+    Destination: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        Address: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 130.236.205.235 (130.236.205.235), Dst: 128.119.245.12 (128.119.245.12)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 393
+    Identification: 0x6ad2 (27346)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0x0841 [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 130.236.205.235 (130.236.205.235)
+    Destination: 128.119.245.12 (128.119.245.12)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 56057 (56057), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 341
+    Source Port: 56057 (56057)
+    Destination Port: 80 (80)
+    [Stream index: 9]
+    [TCP Segment Len: 341]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 342    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1000 = Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+    Window size value: 4117
+    [Calculated window size: 131744]
+    [Window size scaling factor: 32]
+    Checksum: 0xd354 [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 792673259, TSecr 1854469960
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 792673259
+            Timestamp echo reply: 1854469960
+    [SEQ/ACK analysis]
+        [iRTT: 0.118056000 seconds]
+        [Bytes in flight: 341]
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1\r\n]
+            [GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /wireshark-labs/HTTP-wireshark-file4.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n
+    Accept-Language: en-US,en;q=0.5\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Connection: keep-alive\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html]
+    [HTTP request 1/1]
+    [Response in frame: 108]
+
+No.     Time           Source                Destination           Protocol Length Info
+    108 6.882750000    128.119.245.12        130.236.205.235       HTTP     1168   HTTP/1.1 200 OK  (text/html)
+
+Frame 108: 1168 bytes on wire (9344 bits), 1168 bytes captured (9344 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:44.160656000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267544.160656000 seconds
+    [Time delta from previous captured frame: 0.000950000 seconds]
+    [Time delta from previous displayed frame: 0.118152000 seconds]
+    [Time since reference or first frame: 6.882750000 seconds]
+    Frame Number: 108
+    Frame Length: 1168 bytes (9344 bits)
+    Capture Length: 1168 bytes (9344 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http:data-text-lines]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Cisco_43:42:00 (7c:ad:74:43:42:00), Dst: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+    Destination: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        Address: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 128.119.245.12 (128.119.245.12), Dst: 130.236.205.235 (130.236.205.235)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 1154
+    Identification: 0xaf79 (44921)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 46
+    Protocol: TCP (6)
+    Header checksum: 0xd2a0 [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 128.119.245.12 (128.119.245.12)
+    Destination: 130.236.205.235 (130.236.205.235)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 56057 (56057), Seq: 1, Ack: 342, Len: 1102
+    Source Port: 80 (80)
+    Destination Port: 56057 (56057)
+    [Stream index: 9]
+    [TCP Segment Len: 1102]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 1103    (relative sequence number)]
+    Acknowledgment number: 342    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1000 = Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+    Window size value: 122
+    [Calculated window size: 15616]
+    [Window size scaling factor: 128]
+    Checksum: 0xc57d [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 1854470078, TSecr 792673259
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 1854470078
+            Timestamp echo reply: 792673259
+    [SEQ/ACK analysis]
+        [iRTT: 0.118056000 seconds]
+        [Bytes in flight: 1102]
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+            [HTTP/1.1 200 OK\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Version: HTTP/1.1
+        Status Code: 200
+        Response Phrase: OK
+    Date: Thu, 03 Sep 2015 08:05:44 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.9dev Perl/v5.16.3\r\n
+    Last-Modified: Thu, 03 Sep 2015 05:59:01 GMT\r\n
+    ETag: "2e5-51ed17adb4ae0"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 741\r\n
+        [Content length: 741]
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=UTF-8\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.118152000 seconds]
+    [Request in frame: 103]
+Line-based text data: text/html
+    <html>\n
+    <head>\n
+    <title>Lab2-4 file: Embedded URLs</title>\n
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">\n
+    </head>\n
+    \n
+    <body bgcolor="#FFFFFF" text="#000000">\n
+    \n
+    <p>\n
+    <img src="http://www.pearsonhighered.com/assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif" WIDTH="70" HEIGHT="41" > </p>\n
+    <p>This little HTML file is being served by gaia.cs.umass.edu. <br>\n
+    It contains two embedded images. The image above, from the web site of <br>\n
+    our publisher, is served by the server www.pearsoned.com.  The image of our <br>\n
+    book(5th edition) below is stored at the www server manic.cs.umass.edu:</p>\n
+    <p align="left"><img src="http://manic.cs.umass.edu/~kurose/cover_5th_ed.jpg" width="168" height="220"></p>\n
+    </body>\n
+    </html>\n
+
+No.     Time           Source                Destination           Protocol Length Info
+    118 7.021013000    130.236.205.235       165.193.140.14        HTTP     479    GET /assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif HTTP/1.1 
+
+Frame 118: 479 bytes on wire (3832 bits), 479 bytes captured (3832 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:44.298919000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267544.298919000 seconds
+    [Time delta from previous captured frame: 0.000539000 seconds]
+    [Time delta from previous displayed frame: 0.138263000 seconds]
+    [Time since reference or first frame: 7.021013000 seconds]
+    Frame Number: 118
+    Frame Length: 479 bytes (3832 bits)
+    Capture Length: 479 bytes (3832 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Apple_3f:ef:90 (b8:e8:56:3f:ef:90), Dst: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+    Destination: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        Address: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 130.236.205.235 (130.236.205.235), Dst: 165.193.140.14 (165.193.140.14)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 465
+    Identification: 0xe381 (58241)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0xd2fd [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 130.236.205.235 (130.236.205.235)
+    Destination: 165.193.140.14 (165.193.140.14)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 56058 (56058), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 413
+    Source Port: 56058 (56058)
+    Destination Port: 80 (80)
+    [Stream index: 10]
+    [TCP Segment Len: 413]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 414    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1000 = Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+    Window size value: 4104
+    [Calculated window size: 131328]
+    [Window size scaling factor: 32]
+    Checksum: 0x3353 [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 792673512, TSecr 495111390
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 792673512
+            Timestamp echo reply: 495111390
+    [SEQ/ACK analysis]
+        [iRTT: 0.120751000 seconds]
+        [Bytes in flight: 413]
+Hypertext Transfer Protocol
+    GET /assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif HTTP/1.1\r\n]
+            [GET /assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif
+        Request Version: HTTP/1.1
+    Host: www.pearsonhighered.com\r\n
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0\r\n
+    Accept: image/png,image/*;q=0.8,*/*;q=0.5\r\n
+    Accept-Language: en-US,en;q=0.5\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html\r\n
+    Connection: keep-alive\r\n
+    \r\n
+    [Full request URI: http://www.pearsonhighered.com/assets/hip/us/hip_us_pearsonhighered/images/pearson_logo.gif]
+    [HTTP request 1/1]
+    [Response in frame: 131]
+
+No.     Time           Source                Destination           Protocol Length Info
+    122 7.027019000    130.236.205.235       128.119.240.90        HTTP     438    GET /~kurose/cover_5th_ed.jpg HTTP/1.1 
+
+Frame 122: 438 bytes on wire (3504 bits), 438 bytes captured (3504 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:44.304925000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267544.304925000 seconds
+    [Time delta from previous captured frame: 0.000146000 seconds]
+    [Time delta from previous displayed frame: 0.006006000 seconds]
+    [Time since reference or first frame: 7.027019000 seconds]
+    Frame Number: 122
+    Frame Length: 438 bytes (3504 bits)
+    Capture Length: 438 bytes (3504 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Apple_3f:ef:90 (b8:e8:56:3f:ef:90), Dst: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+    Destination: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        Address: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 130.236.205.235 (130.236.205.235), Dst: 128.119.240.90 (128.119.240.90)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 424
+    Identification: 0x85d6 (34262)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0xf1cf [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 130.236.205.235 (130.236.205.235)
+    Destination: 128.119.240.90 (128.119.240.90)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 56059 (56059), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 372
+    Source Port: 56059 (56059)
+    Destination Port: 80 (80)
+    [Stream index: 11]
+    [TCP Segment Len: 372]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 373    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1000 = Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+    Window size value: 4117
+    [Calculated window size: 131744]
+    [Window size scaling factor: 32]
+    Checksum: 0xb807 [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 792673518, TSecr 581027466
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 792673518
+            Timestamp echo reply: 581027466
+    [SEQ/ACK analysis]
+        [iRTT: 0.126714000 seconds]
+        [Bytes in flight: 372]
+Hypertext Transfer Protocol
+    GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n]
+            [GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /~kurose/cover_5th_ed.jpg
+        Request Version: HTTP/1.1
+    Host: manic.cs.umass.edu\r\n
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0\r\n
+    Accept: image/png,image/*;q=0.8,*/*;q=0.5\r\n
+    Accept-Language: en-US,en;q=0.5\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html\r\n
+    Connection: keep-alive\r\n
+    \r\n
+    [Full request URI: http://manic.cs.umass.edu/~kurose/cover_5th_ed.jpg]
+    [HTTP request 1/1]
+    [Response in frame: 134]
+
+No.     Time           Source                Destination           Protocol Length Info
+    131 7.154108000    165.193.140.14        130.236.205.235       HTTP     1022   HTTP/1.1 200 OK  (GIF89a)
+
+Frame 131: 1022 bytes on wire (8176 bits), 1022 bytes captured (8176 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:44.432014000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267544.432014000 seconds
+    [Time delta from previous captured frame: 0.000008000 seconds]
+    [Time delta from previous displayed frame: 0.127089000 seconds]
+    [Time since reference or first frame: 7.154108000 seconds]
+    Frame Number: 131
+    Frame Length: 1022 bytes (8176 bits)
+    Capture Length: 1022 bytes (8176 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http:image-gif]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Cisco_43:42:00 (7c:ad:74:43:42:00), Dst: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+    Destination: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        Address: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 165.193.140.14 (165.193.140.14), Dst: 130.236.205.235 (130.236.205.235)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 1008
+    Identification: 0xf428 (62504)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 46
+    Protocol: TCP (6)
+    Header checksum: 0xd237 [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 165.193.140.14 (165.193.140.14)
+    Destination: 130.236.205.235 (130.236.205.235)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 56058 (56058), Seq: 1635, Ack: 414, Len: 956
+    Source Port: 80 (80)
+    Destination Port: 56058 (56058)
+    [Stream index: 10]
+    [TCP Segment Len: 956]
+    Sequence number: 1635    (relative sequence number)
+    [Next sequence number: 2591    (relative sequence number)]
+    Acknowledgment number: 414    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1000 = Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+    Window size value: 54
+    [Calculated window size: 6912]
+    [Window size scaling factor: 128]
+    Checksum: 0x73cd [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 495111523, TSecr 792673512
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 495111523
+            Timestamp echo reply: 792673512
+    [SEQ/ACK analysis]
+        [iRTT: 0.120751000 seconds]
+        [Bytes in flight: 2324]
+    TCP segment data (956 bytes)
+[3 Reassembled TCP Segments (2590 bytes): #128(266), #130(1368), #131(956)]
+    [Frame: 128, payload: 0-265 (266 bytes)]
+    [Frame: 130, payload: 266-1633 (1368 bytes)]
+    [Frame: 131, payload: 1634-2589 (956 bytes)]
+    [Segment count: 3]
+    [Reassembled TCP length: 2590]
+    [Reassembled TCP Data: 485454502f312e3120323030204f4b0d0a446174653a2054...]
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+            [HTTP/1.1 200 OK\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Version: HTTP/1.1
+        Status Code: 200
+        Response Phrase: OK
+    Date: Thu, 03 Sep 2015 08:05:44 GMT\r\n
+    Server: Apache\r\n
+    Vary: Host,User-Agent\r\n
+    Last-Modified: Sat, 09 Jul 2011 13:17:52 GMT\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 2324\r\n
+        [Content length: 2324]
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: image/gif\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.133095000 seconds]
+    [Request in frame: 118]
+Compuserve GIF, Version: GIF89a
+    Version: GIF89a
+    Screen width: 121
+    Screen height: 40
+    Global settings: (Global color table present) (5 bits per color) (5 bits per pixel)
+        1... .... = Global color map is present: True (1)
+        .100 .... = Bits per color minus 1: 4
+        .... 0... = Global color map is ordered: False (0)
+        .... .100 = Image bits per pixel minus 1: 4
+    Background color index: 0
+    Global color map: 6971abd8d6dbc8c7d4fffbed49549da8aac6e8e4e2fffff1...
+    Extension: Application
+        Extension label: Application (0xff)
+        Data block (length = 11)
+        Data block (length = 60)
+        Data block (length = 101)
+        Data block (length = 32)
+        Data block (length = 51)
+        Data block (length = 100)
+        Data block (length = 108)
+        Data block (length = 77)
+        Data block (length = 100)
+        Data block (length = 51)
+        Data block (length = 65)
+        Data block (length = 116)
+        Data block (length = 162)
+        Data block (length = 0)
+    Extension: Graphics Control
+        Extension label: Graphics Control (0xf9)
+        Data block (length = 4)
+        Data block (length = 0)
+    Image
+        Image left position: 0
+        Image top position: 0
+        Image width: 121
+        Image height: 40
+        Local settings: (1 bit per color) (1 bit per pixel)
+            0... .... = Local color map is present: False (0)
+            .000 .... = Bits per color minus 1: 0
+            .... 0... = Local color map is ordered: False (0)
+            .... .000 = Image bits per pixel minus 1: 0
+        LZW minimum code size: 5
+        Data block (length = 255)
+        Data block (length = 255)
+        Data block (length = 255)
+        Data block (length = 255)
+        Data block (length = 119)
+        Data block (length = 0)
+    Trailer (End of the GIF stream)
+
+No.     Time           Source                Destination           Protocol Length Info
+    134 7.156178000    128.119.240.90        130.236.205.235       HTTP     522    HTTP/1.1 302 Found  (text/html)
+
+Frame 134: 522 bytes on wire (4176 bits), 522 bytes captured (4176 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:44.434084000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267544.434084000 seconds
+    [Time delta from previous captured frame: 0.001782000 seconds]
+    [Time delta from previous displayed frame: 0.002070000 seconds]
+    [Time since reference or first frame: 7.156178000 seconds]
+    Frame Number: 134
+    Frame Length: 522 bytes (4176 bits)
+    Capture Length: 522 bytes (4176 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http:data-text-lines]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Cisco_43:42:00 (7c:ad:74:43:42:00), Dst: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+    Destination: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        Address: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 128.119.240.90 (128.119.240.90), Dst: 130.236.205.235 (130.236.205.235)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 508
+    Identification: 0x9a5e (39518)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 47
+    Protocol: TCP (6)
+    Header checksum: 0xedf3 [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 128.119.240.90 (128.119.240.90)
+    Destination: 130.236.205.235 (130.236.205.235)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 56059 (56059), Seq: 1, Ack: 373, Len: 456
+    Source Port: 80 (80)
+    Destination Port: 56059 (56059)
+    [Stream index: 11]
+    [TCP Segment Len: 456]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 457    (relative sequence number)]
+    Acknowledgment number: 373    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1000 = Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+    Window size value: 243
+    [Calculated window size: 15552]
+    [Window size scaling factor: 64]
+    Checksum: 0x50e3 [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 581027594, TSecr 792673518
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 581027594
+            Timestamp echo reply: 792673518
+    [SEQ/ACK analysis]
+        [iRTT: 0.126714000 seconds]
+        [Bytes in flight: 456]
+Hypertext Transfer Protocol
+    HTTP/1.1 302 Found\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 302 Found\r\n]
+            [HTTP/1.1 302 Found\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Version: HTTP/1.1
+        Status Code: 302
+        Response Phrase: Found
+    Date: Thu, 03 Sep 2015 08:05:44 GMT\r\n
+    Server: Apache\r\n
+    Location: http://caite.cs.umass.edu/~kurose/cover_5th_ed.jpg\r\n
+    Content-Length: 234\r\n
+        [Content length: 234]
+    Connection: close\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.129159000 seconds]
+    [Request in frame: 122]
+Line-based text data: text/html
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">\n
+    <html><head>\n
+    <title>302 Found</title>\n
+    </head><body>\n
+    <h1>Found</h1>\n
+    <p>The document has moved <a href="http://caite.cs.umass.edu/~kurose/cover_5th_ed.jpg">here</a>.</p>\n
+    </body></html>\n
+
+No.     Time           Source                Destination           Protocol Length Info
+    143 7.350292000    130.236.205.235       128.119.240.90        HTTP     438    GET /~kurose/cover_5th_ed.jpg HTTP/1.1 
+
+Frame 143: 438 bytes on wire (3504 bits), 438 bytes captured (3504 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:44.628198000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267544.628198000 seconds
+    [Time delta from previous captured frame: 0.000437000 seconds]
+    [Time delta from previous displayed frame: 0.194114000 seconds]
+    [Time since reference or first frame: 7.350292000 seconds]
+    Frame Number: 143
+    Frame Length: 438 bytes (3504 bits)
+    Capture Length: 438 bytes (3504 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Apple_3f:ef:90 (b8:e8:56:3f:ef:90), Dst: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+    Destination: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        Address: Cisco_9f:f8:26 (00:00:0c:9f:f8:26)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 130.236.205.235 (130.236.205.235), Dst: 128.119.240.90 (128.119.240.90)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 424
+    Identification: 0x9eb5 (40629)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 64
+    Protocol: TCP (6)
+    Header checksum: 0xd8f0 [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 130.236.205.235 (130.236.205.235)
+    Destination: 128.119.240.90 (128.119.240.90)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 56061 (56061), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 372
+    Source Port: 56061 (56061)
+    Destination Port: 80 (80)
+    [Stream index: 13]
+    [TCP Segment Len: 372]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 373    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1000 = Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+    Window size value: 4117
+    [Calculated window size: 131744]
+    [Window size scaling factor: 32]
+    Checksum: 0x358a [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 792673835, TSecr 581027799
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 792673835
+            Timestamp echo reply: 581027799
+    [SEQ/ACK analysis]
+        [iRTT: 0.108590000 seconds]
+        [Bytes in flight: 372]
+Hypertext Transfer Protocol
+    GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n]
+            [GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /~kurose/cover_5th_ed.jpg
+        Request Version: HTTP/1.1
+    Host: caite.cs.umass.edu\r\n
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0\r\n
+    Accept: image/png,image/*;q=0.8,*/*;q=0.5\r\n
+    Accept-Language: en-US,en;q=0.5\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html\r\n
+    Connection: keep-alive\r\n
+    \r\n
+    [Full request URI: http://caite.cs.umass.edu/~kurose/cover_5th_ed.jpg]
+    [HTTP request 1/1]
+    [Response in frame: 266]
+
+No.     Time           Source                Destination           Protocol Length Info
+    266 7.797202000    128.119.240.90        130.236.205.235       HTTP     1366   HTTP/1.1 200 OK  (JPEG JFIF image)
+
+Frame 266: 1366 bytes on wire (10928 bits), 1366 bytes captured (10928 bits) on interface 0
+    Interface id: 0 (en0)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Sep  3, 2015 10:05:45.075108000 CEST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1441267545.075108000 seconds
+    [Time delta from previous captured frame: 0.000375000 seconds]
+    [Time delta from previous displayed frame: 0.446910000 seconds]
+    [Time since reference or first frame: 7.797202000 seconds]
+    Frame Number: 266
+    Frame Length: 1366 bytes (10928 bits)
+    Capture Length: 1366 bytes (10928 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http:image-jfif]
+    [Number of per-protocol-data: 1]
+    [Hypertext Transfer Protocol, key 0]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Cisco_43:42:00 (7c:ad:74:43:42:00), Dst: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+    Destination: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        Address: Apple_3f:ef:90 (b8:e8:56:3f:ef:90)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        Address: Cisco_43:42:00 (7c:ad:74:43:42:00)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 128.119.240.90 (128.119.240.90), Dst: 130.236.205.235 (130.236.205.235)
+    Version: 4
+    Header Length: 20 bytes
+    Differentiated Services Field: 0x00 (DSCP 0x00: Default; ECN: 0x00: Not-ECT (Not ECN-Capable Transport))
+        0000 00.. = Differentiated Services Codepoint: Default (0x00)
+        .... ..00 = Explicit Congestion Notification: Not-ECT (Not ECN-Capable Transport) (0x00)
+    Total Length: 1352
+    Identification: 0x77a1 (30625)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 49
+    Protocol: TCP (6)
+    Header checksum: 0x0b65 [validation disabled]
+        [Good: False]
+        [Bad: False]
+    Source: 128.119.240.90 (128.119.240.90)
+    Destination: 130.236.205.235 (130.236.205.235)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 56061 (56061), Seq: 99913, Ack: 373, Len: 1300
+    Source Port: 80 (80)
+    Destination Port: 56061 (56061)
+    [Stream index: 13]
+    [TCP Segment Len: 1300]
+    Sequence number: 99913    (relative sequence number)
+    [Next sequence number: 101213    (relative sequence number)]
+    Acknowledgment number: 373    (relative ack number)
+    Header Length: 32 bytes
+    .... 0000 0001 1001 = Flags: 0x019 (FIN, PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...1 = Fin: Set
+            [Expert Info (Chat/Sequence): Connection finish (FIN)]
+                [Connection finish (FIN)]
+                [Severity level: Chat]
+                [Group: Sequence]
+    Window size value: 243
+    [Calculated window size: 15552]
+    [Window size scaling factor: 64]
+    Checksum: 0x1b85 [validation disabled]
+        [Good Checksum: False]
+        [Bad Checksum: False]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        No-Operation (NOP)
+            Type: 1
+                0... .... = Copy on fragmentation: No
+                .00. .... = Class: Control (0)
+                ...0 0001 = Number: No-Operation (NOP) (1)
+        Timestamps: TSval 581028243, TSecr 792674164
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 581028243
+            Timestamp echo reply: 792674164
+    [SEQ/ACK analysis]
+        [iRTT: 0.108590000 seconds]
+        [Bytes in flight: 2749]
+    TCP segment data (1300 bytes)
+[70 Reassembled TCP Segments (101212 bytes): #147(1448), #148(1448), #150(1448), #151(1448), #154(1448), #155(1448), #157(1448), #159(1448), #161(1448), #162(1448), #165(1448), #166(1448), #167(1448), #168(1448), #169(1448), #170(1448), #17]
+    [Frame: 147, payload: 0-1447 (1448 bytes)]
+    [Frame: 148, payload: 1448-2895 (1448 bytes)]
+    [Frame: 150, payload: 2896-4343 (1448 bytes)]
+    [Frame: 151, payload: 4344-5791 (1448 bytes)]
+    [Frame: 154, payload: 5792-7239 (1448 bytes)]
+    [Frame: 155, payload: 7240-8687 (1448 bytes)]
+    [Frame: 157, payload: 8688-10135 (1448 bytes)]
+    [Frame: 159, payload: 10136-11583 (1448 bytes)]
+    [Frame: 161, payload: 11584-13031 (1448 bytes)]
+    [Frame: 162, payload: 13032-14479 (1448 bytes)]
+    [Frame: 165, payload: 14480-15927 (1448 bytes)]
+    [Frame: 166, payload: 15928-17375 (1448 bytes)]
+    [Frame: 167, payload: 17376-18823 (1448 bytes)]
+    [Frame: 168, payload: 18824-20271 (1448 bytes)]
+    [Frame: 169, payload: 20272-21719 (1448 bytes)]
+    [Frame: 170, payload: 21720-23167 (1448 bytes)]
+    [Frame: 171, payload: 23168-24615 (1448 bytes)]
+    [Frame: 176, payload: 24616-26063 (1448 bytes)]
+    [Frame: 177, payload: 26064-27511 (1448 bytes)]
+    [Frame: 178, payload: 27512-28959 (1448 bytes)]
+    [Frame: 179, payload: 28960-30407 (1448 bytes)]
+    [Frame: 180, payload: 30408-31855 (1448 bytes)]
+    [Frame: 181, payload: 31856-33303 (1448 bytes)]
+    [Frame: 186, payload: 33304-34751 (1448 bytes)]
+    [Frame: 189, payload: 34752-36199 (1448 bytes)]
+    [Frame: 190, payload: 36200-37647 (1448 bytes)]
+    [Frame: 191, payload: 37648-39095 (1448 bytes)]
+    [Frame: 192, payload: 39096-40543 (1448 bytes)]
+    [Frame: 193, payload: 40544-41991 (1448 bytes)]
+    [Frame: 198, payload: 41992-43439 (1448 bytes)]
+    [Frame: 199, payload: 43440-44887 (1448 bytes)]
+    [Frame: 200, payload: 44888-46335 (1448 bytes)]
+    [Frame: 201, payload: 46336-47783 (1448 bytes)]
+    [Frame: 202, payload: 47784-49231 (1448 bytes)]
+    [Frame: 203, payload: 49232-50679 (1448 bytes)]
+    [Frame: 208, payload: 50680-52127 (1448 bytes)]
+    [Frame: 209, payload: 52128-53575 (1448 bytes)]
+    [Frame: 210, payload: 53576-55023 (1448 bytes)]
+    [Frame: 211, payload: 55024-56471 (1448 bytes)]
+    [Frame: 212, payload: 56472-57919 (1448 bytes)]
+    [Frame: 216, payload: 57920-59367 (1448 bytes)]
+    [Frame: 217, payload: 59368-60815 (1448 bytes)]
+    [Frame: 218, payload: 60816-62263 (1448 bytes)]
+    [Frame: 219, payload: 62264-63711 (1448 bytes)]
+    [Frame: 226, payload: 63712-65159 (1448 bytes)]
+    [Frame: 227, payload: 65160-66607 (1448 bytes)]
+    [Frame: 228, payload: 66608-68055 (1448 bytes)]
+    [Frame: 229, payload: 68056-69503 (1448 bytes)]
+    [Frame: 230, payload: 69504-70951 (1448 bytes)]
+    [Frame: 234, payload: 70952-72399 (1448 bytes)]
+    [Frame: 235, payload: 72400-73847 (1448 bytes)]
+    [Frame: 236, payload: 73848-75295 (1448 bytes)]
+    [Frame: 239, payload: 75296-76743 (1448 bytes)]
+    [Frame: 240, payload: 76744-78191 (1448 bytes)]
+    [Frame: 242, payload: 78192-79639 (1448 bytes)]
+    [Frame: 243, payload: 79640-81087 (1448 bytes)]
+    [Frame: 244, payload: 81088-82535 (1448 bytes)]
+    [Frame: 247, payload: 82536-83983 (1448 bytes)]
+    [Frame: 248, payload: 83984-85431 (1448 bytes)]
+    [Frame: 249, payload: 85432-86879 (1448 bytes)]
+    [Frame: 250, payload: 86880-88327 (1448 bytes)]
+    [Frame: 251, payload: 88328-89775 (1448 bytes)]
+    [Frame: 252, payload: 89776-91223 (1448 bytes)]
+    [Frame: 253, payload: 91224-92671 (1448 bytes)]
+    [Frame: 254, payload: 92672-94119 (1448 bytes)]
+    [Frame: 255, payload: 94120-95567 (1448 bytes)]
+    [Frame: 256, payload: 95568-97015 (1448 bytes)]
+    [Frame: 257, payload: 97016-98463 (1448 bytes)]
+    [Frame: 264, payload: 98464-99911 (1448 bytes)]
+    [Frame: 266, payload: 99912-101211 (1300 bytes)]
+    [Segment count: 70]
+    [Reassembled TCP length: 101212]
+    [Reassembled TCP Data: 485454502f312e3120323030204f4b0d0a446174653a2054...]
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+            [HTTP/1.1 200 OK\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Version: HTTP/1.1
+        Status Code: 200
+        Response Phrase: OK
+    Date: Thu, 03 Sep 2015 08:05:44 GMT\r\n
+    Server: Apache\r\n
+    Last-Modified: Tue, 15 Sep 2009 18:23:27 GMT\r\n
+    ETag: "78004-18a68-473a1e0e6e5c0"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 100968\r\n
+        [Content length: 100968]
+    Connection: close\r\n
+    Content-Type: image/jpeg\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.446910000 seconds]
+    [Request in frame: 143]
+JPEG File Interchange Format
+    Marker: Start of Image (0xffd8)
+    Marker segment: Reserved for application segments - 0 (0xFFE0)
+        Marker: Reserved for application segments - 0 (0xffe0)
+        Length: 16
+        Identifier: JFIF
+        Version: 1.2
+            Major Version: 1
+            Minor Version: 2
+        Units: Dots per inch (1)
+        Xdensity: 72
+        Ydensity: 72
+        Xthumbnail: 0
+        Ythumbnail: 0
+    Marker segment: Reserved for application segments - 1 (0xFFE1)
+        Marker: Reserved for application segments - 1 (0xffe1)
+        Length: 9469
+        Identifier: Exif
+        Endianness: big endian
+        Start offset of IFD starting from the TIFF header start: 8 bytes
+        Number of fields in this IFD: 7
+        Exif Tag: 0x0112 (Orientation), Type: 3 (SHORT), Count: 1, Value offset from start of TIFF header: 65536
+        Exif Tag: 0x011A (XResolution), Type: 5 (RATIONAL), Count: 1, Value offset from start of TIFF header: 98
+        Exif Tag: 0x011B (YResolution), Type: 5 (RATIONAL), Count: 1, Value offset from start of TIFF header: 106
+        Exif Tag: 0x0128 (ResolutionUnit), Type: 3 (SHORT), Count: 1, Value offset from start of TIFF header: 131072
+        Exif Tag: 0x0131 (Software), Type: 2 (ASCII), Count: 28, Value offset from start of TIFF header: 114
+        Exif Tag: 0x0132 (DateTime), Type: 2 (ASCII), Count: 20, Value offset from start of TIFF header: 142
+        Exif Tag: 0x8769 (Exif IFD Pointer), Type: 4 (LONG), Count: 1, Value offset from start of TIFF header: 164
+        Offset to next IFD from start of TIFF header: 208 bytes
+        Number of fields in this IFD: 6
+        Exif Tag: 0x0103 (Compression), Type: 3 (SHORT), Count: 1, Value offset from start of TIFF header: 393216
+        Exif Tag: 0x011A (XResolution), Type: 5 (RATIONAL), Count: 1, Value offset from start of TIFF header: 286
+        Exif Tag: 0x011B (YResolution), Type: 5 (RATIONAL), Count: 1, Value offset from start of TIFF header: 294
+        Exif Tag: 0x0128 (ResolutionUnit), Type: 3 (SHORT), Count: 1, Value offset from start of TIFF header: 131072
+        Exif Tag: 0x0201 (JPEGInterchangeFormat), Type: 4 (LONG), Count: 1, Value offset from start of TIFF header: 302
+        Exif Tag: 0x0202 (JPEGInterchangeFormatLength), Type: 4 (LONG), Count: 1, Value offset from start of TIFF header: 9159
+        Offset to next IFD from start of TIFF header: 0 bytes
+    Marker segment: Reserved for application segments - 13 (0xFFED)
+        Marker: Reserved for application segments - 13 (0xffed)
+        Length: 10800
+        Remaining segment data (10798 bytes)
+    Marker segment: Reserved for application segments - 1 (0xFFE1)
+        Marker: Reserved for application segments - 1 (0xffe1)
+        Length: 4046
+        Identifier: http://ns.adobe.com/xap/1.0/ (Unknown identifier)
+        Remaining segment data (4015 bytes)
+    Marker segment: Reserved for application segments - 2 (0xFFE2)
+        Marker: Reserved for application segments - 2 (0xffe2)
+        Length: 3160
+        Identifier: ICC_PROFILE (Unknown identifier)
+        Remaining segment data (3146 bytes)
+    Marker segment: Reserved for application segments - 14 (0xFFEE)
+        Marker: Reserved for application segments - 14 (0xffee)
+        Length: 14
+        Remaining segment data (12 bytes)
+    Marker segment: Define quantization table(s) (0xFFDB)
+        Marker: Define quantization table(s) (0xffdb)
+        Length: 132
+        Remaining segment data (130 bytes)
+    Start of Frame header: Start of Frame (non-differential, Huffman coding) - Baseline DCT (0xFFC0)
+        Marker: Start of Frame (non-differential, Huffman coding) - Baseline DCT (0xffc0)
+        Length: 17
+        Sample Precision (bits): 8
+        Lines: 301
+        Samples per line: 244
+        Number of image components in frame: 3
+        Component identifier: 1
+        0001 .... = Horizontal sampling factor: 1
+        .... 0001 = Vertical sampling factor: 1
+        Quantization table destination selector: 0
+        Component identifier: 2
+        0001 .... = Horizontal sampling factor: 1
+        .... 0001 = Vertical sampling factor: 1
+        Quantization table destination selector: 1
+        Component identifier: 3
+        0001 .... = Horizontal sampling factor: 1
+        .... 0001 = Vertical sampling factor: 1
+        Quantization table destination selector: 1
+    Marker segment: Define restart interval (0xFFDD)
+        Marker: Define restart interval (0xffdd)
+        Length: 4
+        Remaining segment data (2 bytes)
+    Marker segment: Define Huffman table(s) (0xFFC4)
+        Marker: Define Huffman table(s) (0xffc4)
+        Length: 418
+        Remaining segment data (416 bytes)
+    Start of Segment header: Start of Scan (0xFFDA)
+        Marker: Start of Scan (0xffda)
+        Length: 12
+        Number of image components in scan: 3
+        Scan component selector: 1
+        0000 .... = DC entropy coding table destination selector: 0
+        .... 0000 = AC entropy coding table destination selector: 0
+        Scan component selector: 2
+        0001 .... = DC entropy coding table destination selector: 1
+        .... 0001 = AC entropy coding table destination selector: 1
+        Scan component selector: 3
+        0001 .... = DC entropy coding table destination selector: 1
+        .... 0001 = AC entropy coding table destination selector: 1
+        Start of spectral or predictor selection: 0
+        End of spectral selection: 63
+        0000 .... = Successive approximation bit position high: 0
+        .... 0000 = Successive approximation bit position low or point transform: 0
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 0 (0xffd0)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 1 (0xffd1)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 2 (0xffd2)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 3 (0xffd3)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 4 (0xffd4)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 5 (0xffd5)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 6 (0xffd6)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 7 (0xffd7)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 0 (0xffd0)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 1 (0xffd1)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 2 (0xffd2)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 3 (0xffd3)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 4 (0xffd4)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 5 (0xffd5)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 6 (0xffd6)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 7 (0xffd7)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 0 (0xffd0)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 1 (0xffd1)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 2 (0xffd2)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 3 (0xffd3)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 4 (0xffd4)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 5 (0xffd5)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 6 (0xffd6)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 7 (0xffd7)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 0 (0xffd0)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 1 (0xffd1)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 2 (0xffd2)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 3 (0xffd3)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 4 (0xffd4)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 5 (0xffd5)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 6 (0xffd6)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 7 (0xffd7)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 0 (0xffd0)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 1 (0xffd1)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 2 (0xffd2)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 3 (0xffd3)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: Restart interval termination - Restart with modulo 8 count 4 (0xffd4)
+    Entropy-coded segment (dissection is not yet implemented)
+    Marker: End of Image (0xffd9)

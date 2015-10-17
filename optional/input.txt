@@ -1,0 +1,1 @@
+001	001	010	example.com	testFile.mpg	25165824	6
