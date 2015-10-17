@@ -27,6 +27,7 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
 
     # ----------------
     for line in sys.stdin:
+        stdOutString = line.replace("\n","")
         currReq = line.split()
         incommingTime = float(currReq[0])
         videoDuration = int(currReq[2])
@@ -46,6 +47,7 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
                     evictionMoreThanLimit += 1
                 else:
                     evictionLessThanLimit += 1
+                cacheSize -= currFile["size"]
                 del cache[cacheKeys[i]]
                 continue
             else:
@@ -56,6 +58,8 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
         # Don't save if not high priority
         if priority > minPriority:
             misses += 1
+            stdOutString += "\t NOT_PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
+            print(stdOutString)
             continue
 
         # If in dict it's also in cache since we clean cache before hitting it
@@ -66,12 +70,15 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
             tempEntry = {"hits" : int(currFile["hits"])+1, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
             del cache[fileName]
             cache[fileName] = tempEntry
+            stdOutString += "\t ALREADY_CACHED \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
         # File not in cache
         else:
             misses += 1
             cacheSize += size
             cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
-    
+            stdOutString += "\t PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
+        print(stdOutString)
+
     # ----------------
     # Output
 

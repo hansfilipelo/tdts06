@@ -36,6 +36,7 @@ def LRUSimulator(cacheMaxSize, minPriority, outPutFile):
     # ----------------
 
     for line in sys.stdin:
+        stdOutString = line.replace("\n","")
         currReq = line.split()
         incommingTime = float(currReq[0])
         videoDuration = int(currReq[2])
@@ -47,17 +48,21 @@ def LRUSimulator(cacheMaxSize, minPriority, outPutFile):
             misses += 1
             filesNeverInCache += 1
             bytesNeverInCache += size
+            stdOutString += "\t NOT_PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
+            print(stdOutString)
             continue
 
         if fileName in cache:
             hits += 1
             cache[fileName]["hits"] += int(cache[fileName]["hits"]) + 1
+            stdOutString += "\t ALREADY_CACHED \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
         else:
             misses += 1
             if cacheSize+size < cacheMaxSize:
                 cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
                 cacheSize += size
                 filesInCache += 1
+                stdOutString += "\t PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
             else:
                 loopCount = 0
                 # While cache is full
@@ -83,12 +88,14 @@ def LRUSimulator(cacheMaxSize, minPriority, outPutFile):
                         evictionLessThanLimit += 1
 
                 if loopCount > filesInCache:
-                    continue
+                    stdOutString += "\t NOT_PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
                 else:
                     # When we've emptied cache enough, fit our new object in cache
                     cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
                     cacheSize += size
                     filesInCache += 1
+                    stdOutString += "\t PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
+        print(stdOutString)
 
     # ----------------
     # Output
