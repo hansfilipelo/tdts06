@@ -25,6 +25,7 @@ misses = 0
 
 cache = dict()
 cacheSize = 0
+filesInCache = 0
 
 filesNeverInCache = 0
 bytesNeverInCache = 0
@@ -44,6 +45,7 @@ if __name__ == "__main__":
     # ----------------
 
     for line in sys.stdin:
+        print(str(filesInCache))
         currReq = line.split()
         incommingTime = float(currReq[0])
         videoDuration = int(currReq[2])
@@ -65,25 +67,38 @@ if __name__ == "__main__":
             if cacheSize+size < cacheMaxSize:
                 cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
                 cacheSize += size
+                filesInCache += 1
             else:
+                loopCount = 0
                 # While cache is full
                 while cacheSize+size > cacheMaxSize:
+
+                    # Don't try and fit the file in cache forever
+                    if loopCount > filesInCache/2:
+                        break
+                    loopCount += 1
+
                     removeVideo = random.sample(cache.keys(),1)[0] # Pick any video
                     # If someone is watching this video, continue looking for other videos to throw away from cache
                     if float(cache[removeVideo]["lastRequested"]) + int(cache[removeVideo]["duration"]) > incommingTime:
                         continue
+
                     # Else remove element from cache
                     removedElement = cache.pop(removeVideo)
                     cacheSize -= int(removedElement["size"])
-
+                    filesInCache -= 1
                     if int(removedElement["hits"]) > limitBeforeEviction:
                         evictionMoreThanLimit += 1
                     else:
                         evictionLessThanLimit += 1
 
-                # When we've emptied cache enough, fit our new object in cache
-                cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
-                cacheSize += size
+                if loopCount > filesInCache/2:
+                    continue
+                else:
+                    # When we've emptied cache enough, fit our new object in cache
+                    cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
+                    cacheSize += size
+                    filesInCache += 1
 
     # ----------------
     # Output

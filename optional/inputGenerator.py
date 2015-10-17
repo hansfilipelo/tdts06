@@ -19,7 +19,7 @@ if __name__ == "__main__":
     programName = argVector.pop(0)
 
     nrOfFiles = 100
-    maxFileSize = 2 # This can't be bigger than specified cache size (X) : 36700160 bytes = 25 MiB
+    maxFileSize = 36700160 # This can't be bigger than specified cache size (X) : 36700160 bytes = 25 MiB
     maxDuration = 3600 # 3600s = 1h
     nrOfClients = 100
     requestRate = 0.005
