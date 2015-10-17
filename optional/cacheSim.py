@@ -45,7 +45,6 @@ if __name__ == "__main__":
     # ----------------
 
     for line in sys.stdin:
-        print(str(filesInCache))
         currReq = line.split()
         incommingTime = float(currReq[0])
         videoDuration = int(currReq[2])
