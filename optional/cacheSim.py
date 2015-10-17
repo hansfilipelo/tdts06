@@ -73,7 +73,7 @@ if __name__ == "__main__":
                 while cacheSize+size > cacheMaxSize:
 
                     # Don't try and fit the file in cache forever
-                    if loopCount > filesInCache/2:
+                    if loopCount > filesInCache:
                         break
                     loopCount += 1
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
                     else:
                         evictionLessThanLimit += 1
 
-                if loopCount > filesInCache/2:
+                if loopCount > filesInCache:
                     continue
                 else:
                     # When we've emptied cache enough, fit our new object in cache
