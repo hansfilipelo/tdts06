@@ -38,8 +38,8 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
         # Since dict is ordered we can clean from last reacently placed file
         # and work forward in cache - really simplifies implementation
         cacheKeys = list(cache.keys())
-        i = len(cacheKeys)-1
-        while i >= 0:
+        i = 0
+        while i < len(cacheKeys):
             currFile = cache[cacheKeys[i]]
 
             if int(currFile["lastRequested"]) + int(currFile["duration"]) + timeToSave < incommingTime:
@@ -49,11 +49,11 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
                     evictionLessThanLimit += 1
                 cacheSize -= currFile["size"]
                 del cache[cacheKeys[i]]
+                i += 1
                 continue
             else:
                 break # We can break here (and not go through entire list)
                 # since dict keys is ordered
-            i -= 1
 
         # Don't save if not high priority
         if priority > minPriority:

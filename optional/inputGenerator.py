@@ -18,7 +18,7 @@ if __name__ == "__main__":
     argVector = sys.argv
     programName = argVector.pop(0)
 
-    nrOfFiles = 100
+    nrOfFiles = 100000
     maxFileSize = 36700160 # This can't be bigger than specified cache size (X) : 36700160 bytes = 25 MiB
     maxDuration = 1800 # 3600s = 1h
     nrOfClients = 100
