@@ -47,7 +47,6 @@ if __name__ == "__main__":
 
         # Divide c with priority for number of requests for that specific file
         nrOfRequestsForFile = nrOfFiles*c/priority
-        print(nrOfRequestsForFile)
         for it in range(1,int(round(nrOfRequestsForFile))):
             timeStamp = (1/requestRate)*(-math.log(random.random())) # Randomize incomming request time
             ClientID = random.randrange(1,nrOfClients,1)
