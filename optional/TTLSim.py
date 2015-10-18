@@ -49,6 +49,7 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
                 else:
                     evictionLessThanLimit += 1
                 cacheSize -= currFile["size"]
+                filesInCache -= 1
                 del cache[cacheKeys[i]]
                 i += 1
                 continue
