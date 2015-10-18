@@ -14,6 +14,7 @@
 import sys,os
 import fileinput
 import random
+import collections
 
 # ----------------
 
@@ -23,18 +24,19 @@ def LRUSimulator(cacheMaxSize, minPriority, outPutFile):
     hits = 0
     misses = 0
 
-    cache = dict()
+    cache = collections.OrderedDict()
     cacheSize = 0
     filesInCache = 0
 
+    notInCache = dict()
     filesNeverInCache = 0
     bytesNeverInCache = 0
 
     limitBeforeEviction = 10 # Limit of statistics
     evictionMoreThanLimit = 0
     evictionLessThanLimit = 0
-    # ----------------
 
+    # ----------------
     for line in sys.stdin:
         stdOutString = line.replace("\n","")
         currReq = line.split()
@@ -44,57 +46,52 @@ def LRUSimulator(cacheMaxSize, minPriority, outPutFile):
         priority = int(currReq[6])
         size = int(currReq[5])
 
-        if priority > minPriority: # If priority of this file is higher (but lower ;) ) than the ones we cache, don't cache
+        # Don't save if not high priority
+        if priority > minPriority:
             misses += 1
-            filesNeverInCache += 1
-            bytesNeverInCache += size
+            if fileName in notInCache:
+                pass
+            else:
+                notInCache[fileName]
+                filesNeverInCache += 1
+                bytesNeverInCache += size
             stdOutString += "\t NOT_PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
             print(stdOutString)
             continue
 
+        # Since dict is ordered we can clean from last reacently placed file
+        # and work forward in cache - really simplifies implementation
+        if cacheSize+size > cacheMaxSize:
+            cacheKeys = list(cache.keys())
+            i = 0
+            for key in cacheKeys:
+                currFile = cache[key]
+                if int(currFile["hits"]) > limitBeforeEviction:
+                    evictionMoreThanLimit += 1
+                else:
+                    evictionLessThanLimit += 1
+                cacheSize -= currFile["size"]
+                filesInCache -= 1
+                del cache[key]
+                if cacheSize+size < cacheMaxSize:
+                    break
+
+        # If in dict it's also in cache since we clean cache before hitting it
         if fileName in cache:
+            currFile = cache[fileName]
             hits += 1
-            cache[fileName]["hits"] += int(cache[fileName]["hits"]) + 1
+            # Needs to be ordered since OrderedDict and LRU - remove and then put in cache again
+            tempEntry = {"hits" : int(currFile["hits"])+1, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
+            del cache[fileName]
+            cache[fileName] = tempEntry
             stdOutString += "\t ALREADY_CACHED \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
+        # File not in cache
         else:
             misses += 1
-            if cacheSize+size < cacheMaxSize:
-                cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
-                cacheSize += size
-                filesInCache += 1
-                stdOutString += "\t PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
-            else:
-                loopCount = 0
-                # While cache is full
-                while cacheSize+size > cacheMaxSize:
-
-                    # Don't try and fit the file in cache forever
-                    if loopCount > filesInCache:
-                        break
-                    loopCount += 1
-
-                    removeVideo = random.sample(cache.keys(),1)[0] # Pick any video
-                    # If someone is watching this video, continue looking for other videos to throw away from cache
-                    if float(cache[removeVideo]["lastRequested"]) + int(cache[removeVideo]["duration"]) > incommingTime:
-                        continue
-
-                    # Else remove element from cache
-                    removedElement = cache.pop(removeVideo)
-                    cacheSize -= int(removedElement["size"])
-                    filesInCache -= 1
-                    if int(removedElement["hits"]) > limitBeforeEviction:
-                        evictionMoreThanLimit += 1
-                    else:
-                        evictionLessThanLimit += 1
-
-                if loopCount > filesInCache:
-                    stdOutString += "\t NOT_PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
-                else:
-                    # When we've emptied cache enough, fit our new object in cache
-                    cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
-                    cacheSize += size
-                    filesInCache += 1
-                    stdOutString += "\t PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
+            cacheSize += size
+            filesInCache += 1
+            cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
+            stdOutString += "\t PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
         print(stdOutString)
 
     # ----------------

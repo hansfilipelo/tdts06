@@ -6,7 +6,7 @@ import random
 import collections
 
 # ----------------
-# cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
+# cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "incommingTime" : incommingTime, "duration" : videoDuration}
 
 def TTLSimulator(minPriority, timeToSave, outPutFile):
 
@@ -18,6 +18,7 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
     cacheSize = 0
     filesInCache = 0
 
+    notInCache = dict()
     filesNeverInCache = 0
     bytesNeverInCache = 0
 
@@ -42,7 +43,7 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
         while i < len(cacheKeys):
             currFile = cache[cacheKeys[i]]
 
-            if int(currFile["lastRequested"]) + int(currFile["duration"]) + timeToSave < incommingTime:
+            if int(currFile["incommingTime"]) + int(currFile["duration"]) + timeToSave < incommingTime:
                 if int(currFile["hits"]) > limitBeforeEviction:
                     evictionMoreThanLimit += 1
                 else:
@@ -58,24 +59,26 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
         # Don't save if not high priority
         if priority > minPriority:
             misses += 1
+            if fileName in notInCache:
+                pass
+            else:
+                notInCache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "incommingTime" : incommingTime, "duration" : videoDuration}
+                filesNeverInCache += 1
+                bytesNeverInCache += size
             stdOutString += "\t NOT_PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
             print(stdOutString)
             continue
 
         # If in dict it's also in cache since we clean cache before hitting it
         if fileName in cache:
-            currFile = cache[fileName]
             hits += 1
-            # Needs to be ordered - remove and then put in cache again
-            tempEntry = {"hits" : int(currFile["hits"])+1, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
-            del cache[fileName]
-            cache[fileName] = tempEntry
             stdOutString += "\t ALREADY_CACHED \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
         # File not in cache
         else:
             misses += 1
             cacheSize += size
-            cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
+            filesInCache += 1
+            cache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "incommingTime" : incommingTime, "duration" : videoDuration}
             stdOutString += "\t PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
         print(stdOutString)
 
