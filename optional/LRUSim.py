@@ -52,7 +52,7 @@ def LRUSimulator(cacheMaxSize, minPriority, outPutFile):
             if fileName in notInCache:
                 pass
             else:
-                notInCache[fileName]
+                notInCache[fileName] = {"hits" : 0, "size" : size, "priority" : priority, "lastRequested" : incommingTime, "duration" : videoDuration}
                 filesNeverInCache += 1
                 bytesNeverInCache += size
             stdOutString += "\t NOT_PUT_IN_CACHE \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)

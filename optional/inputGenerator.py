@@ -19,10 +19,10 @@ if __name__ == "__main__":
     programName = argVector.pop(0)
 
     nrOfFiles = 100000
-    maxFileSize = 36700160 # This can't be bigger than specified cache size (X) : 36700160 bytes = 25 MiB
+    maxFileSize = 36700160 # This can't be bigger than specified cache size (X) for LRU cache : 36700160 bytes = 25 MiB
     maxDuration = 1800 # 3600s = 1h
     nrOfClients = 100
-    requestRate = 0.005
+    requestRate = 1/50000
     outPutFile = "input.txt"
     tempFile = "temp.txt"
 

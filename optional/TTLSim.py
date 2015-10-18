@@ -73,6 +73,7 @@ def TTLSimulator(minPriority, timeToSave, outPutFile):
         # If in dict it's also in cache since we clean cache before hitting it
         if fileName in cache:
             hits += 1
+            cache[fileName]["hits"] = int(cache[fileName]["hits"]) + 1
             stdOutString += "\t ALREADY_CACHED \t Files_in_cache: " + str(filesInCache) + " \t Bytes_in_cache: " + str(cacheSize)
         # File not in cache
         else:
