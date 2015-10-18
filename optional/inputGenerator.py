@@ -29,10 +29,9 @@ if __name__ == "__main__":
     # Zipf distribution for popularity of the files (most files will be requested only a few times)
     # Prepare a constant according to: https://sv.wikipedia.org/wiki/Zipfs_lag
     cTemp = 0
-    reallyLargeConstant = nrOfFiles*nrOfFiles
     for i in range(1,nrOfFiles):
-        cTemp += i
-    c = nrOfFiles*reallyLargeConstant/cTemp
+        cTemp += 1/i
+    c = 1/cTemp
 
     # Initialize a string thet we later write to file
     writeString = ""
@@ -47,8 +46,8 @@ if __name__ == "__main__":
         fileSize = random.randrange(1,maxFileSize,1)
 
         # Divide c with priority for number of requests for that specific file
-        nrOfRequestsForFile = c/priority
-
+        nrOfRequestsForFile = nrOfFiles*c/priority
+        print(nrOfRequestsForFile)
         for it in range(1,int(round(nrOfRequestsForFile))):
             timeStamp = (1/requestRate)*(-math.log(random.random())) # Randomize incomming request time
             ClientID = random.randrange(1,nrOfClients,1)
